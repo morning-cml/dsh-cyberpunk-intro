@@ -1,0 +1,53 @@
+{
+  "name": "dsh-cyberpunk-intro",
+  "version": "1.0.0",
+  "description": "DSH 启动时铺满窗口播放 DeepSeek 赛博朋克片头（4K 高清重制）。",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "media/intro.mp4",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "BSD-3-Clause",
+  "author": "morning-cml",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morning-cml/dsh-cyberpunk-intro.git"
+  },
+  "homepage": "https://github.com/morning-cml/dsh-cyberpunk-intro#readme",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "intro",
+    "boot-animation"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  }
+}
